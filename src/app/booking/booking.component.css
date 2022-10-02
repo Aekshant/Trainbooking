@@ -1,3 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
 .signup-form{
 
     height:500px;
@@ -30,7 +32,7 @@
  
     margin:10px;
  
-    color:#fff;
+    color:black;
  
  }
  
@@ -40,7 +42,7 @@
  
     padding:10px;
  
-    color:#fff;
+    color:black;
  
  }
  
@@ -50,7 +52,7 @@
  
     margin:10px;
  
-    color:#fff;
+    color:black;
  
  }
  

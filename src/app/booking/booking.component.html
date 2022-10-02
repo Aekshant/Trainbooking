@@ -1,102 +1,93 @@
-
-
-<form>
-
-
-
-
-<div class="signup-form bg-dark">
-
-
-
-
-<div class="Signup-head bg-warning">
-
-<h1>Book Tickets</h1>
-
-</div>
-
-
-
-
-<div class="signup-content">
-
-<label class="text-white">Journey Type :</label>
-
-<input type="radio" class="radio" name="r">
-
-<label class="text-white">One Way</label>
-
-<input type="radio" class="radio" name="r">
-
-<label class="text-white">Return</label>
-
-</div>
-
-
-
-
-<div class="signup-content2">
-
-<input type="text" placeholder="From" class="input bg-white">
-
-<input type="text" placeholder="To" class="input bg-white"><br>
-
-
-
-
-
-
-<label class="text-white" style="margin-left:10px;">Depart</label>
-
-<input type="date" class="tarikh bg-dark text-white">
-
-<label class="text-white" style="margin-left:10px;">Return</label>
-
-<input type="date" class="tarikh bg-dark">
-
-
-
-
-<input type="number" class="bg-white person" placeholder="Adults">
-
-<input type="number" class="bg-white person" placeholder="Children"><br>
-
-
-
-
-<label class="text-white travel">Travel Class</label>
-
-<select class="bg-dark text-white travel2">
-
-<option></option>
-
-<option>First Class/1A</option>
-
-<option>AC 2tier/2A</option>
-
-<option>AC 3tier/3A</option>
-
-<option>Executive class chair car/Economy Class</option>
-
-<option>AC Chair Car</option>
-
-<option>Sleeper Class</option>
-
-<option>Second Class</option>
-
-<option>General</option>
-
-</select>
-
-
-
-
-<input type="submit" value="Check Availability" class="submit-btn bg-warning">
-
-</div>
-
-</div>
-
-</form>
-
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center">
+
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Book Your Train Ticket <br />
+              <span class="text-primary">for your Journey</span>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+              quibusdam tempora at cupiditate quis eum maiores libero
+              veritatis? Dicta facilis sint aliquid ipsum atque?
+            </p>
+          </div>
+  
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+              <div class="card-body py-5 px-md-5">
+                <form>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label  class="text-black">Journey Type :</label>
+                            <input type="radio" style=" margin-left: 30px;" class="radio" name="r">
+                            <label style=" margin-left: 5px;" class="text-black">One Way</label>
+                            <input type="radio" style=" margin-left: 30px;" class="radio" name="r">
+                            <label style=" margin-left: 5px;"  class="text-black">Return</label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                         <label  class="text-black">From City:</label>
+                         <input type="text" style=" margin-left: 10px;" placeholder="Enter From City Name" class="input bg-white">
+                         <label style=" margin-left: 10px;" class="text-black">To City :</label>
+                         <input type="text" style=" margin-left: 10px;"  placeholder="Enter To City Name" class="input bg-white"><br>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <label class="text-black">Depart</label>
+                        <input type="date" style=" margin-left: 10px;" class="tarikh bg-white text-black">
+                        <label class="text-black" style="margin-left:10px;">Return</label>
+                        <input type="date" style=" margin-left: 10px;" class="tarikh bg-white text-black">
+                  </div>
+  
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <label class="text-black">Adults</label>
+                    <input type="number" style="margin-left:10px;" class="bg-white person" placeholder=" No. of Adults">
+                    <label class="text-black" style="margin-left:10px;">Children</label>
+                    <input type="number" style="margin-left:10px;" class="bg-white person" placeholder=" No. of Children"><br>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <label class="text-black travel" >Travel Class</label>
+                    <select style="margin-left:10px;" class="bg-white text-black travel2">
+                        <option>Select Travel Class</option>
+                        <option>First Class/1A</option>
+                        <option>AC 2tier/2A</option>
+                        <option>AC 3tier/3A</option>
+                        <option>Executive class chair car/Economy Class</option>
+                        <option>AC Chair Car</option>
+                        <option>Sleeper Class</option>
+                        <option>Second Class</option>
+                        <option>General</option>
+                    </select>
+            <br>
+                  </div>
+  
+                  
+                  <!-- Submit button -->
+
+                  <input type="submit" routerLink="" value="Back to Home" style="margin-right: 10px;" class="btn btn-outline-dark"> 
+                  <input value="Book a Train Ticket" routerLink="" style="margin-left: 10px;" class="btn btn-outline-primary">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
