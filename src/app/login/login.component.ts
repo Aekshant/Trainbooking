@@ -1,5 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 import { Login } from './login';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +12,31 @@ import { Login } from './login';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    private _loginService : LoginService,
+    private router: Router,
+    private toastr: ToastrService
+     ) { }
 
   ngOnInit(): void {
   }
    loginModel = new Login("","")
-
+   showError: boolean = false;
+   
    onSubmit() {
     console.log(this.loginModel);
+    this._loginService.login( this.loginModel )
+    .subscribe( data =>{
+      console.log( data );
+      if( data.message == true ) {
+        localStorage.setItem("token", data.data.token);
+        this.router.navigate(['/']);
+      }
+      else{
+        this.toastr.error( data.message , 'Login', {
+          timeOut: 3000,
+        });
+      }
+    })
    }
 }
