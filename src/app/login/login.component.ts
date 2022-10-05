@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from './login';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  isDisabled = true
-  email:string = "";
+   loginModel = new Login("","")
+
+   onSubmit() {
+    console.log(this.loginModel);
+   }
 }
