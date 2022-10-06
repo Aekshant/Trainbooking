@@ -21,8 +21,18 @@ export class BookingComponent implements OnInit {
   ngOnInit(): void {
   }
   bookingModel = new Booking("Select Journey Type","","","","",0,0,"Select Travel Class")
+  token = localStorage.getItem("token") ? true : false
 
   onSubmit() {
+    if( !this.token ){
+      this.toastr.show( "Please Login Please" , 'Booking', {
+        timeOut: 4000,
+      });
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 2000);
+      return
+    }
     
     if( this.bookingModel.type == "Select Journey Type" ) {
       this.toastr.error( "Select Journey Type" , 'Booking', {
