@@ -10,12 +10,37 @@
             <a class="nav-link" routerLink="/" style="padding-left: 50px;">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" style="padding-left: 50px;">Contact Us</a>
+            <a class="nav-link" routerLink="/contact" style="padding-left: 50px;">Contact Us</a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-          <a  style="margin-right: 50px;" routerLink="/signup" >Sign up</a>
-          <a  routerLink="/login" >Login</a>
+          <button [class.d-none]="token" type="button" routerLink="/signup" class="btn btn-primary me-3">
+            Sign up for free
+          </button>
+          <button  type="button" [class.d-none]="!token" (click)="logout()" routerLink="/signup" class="btn btn-secondary me-3">
+            Log Out
+          </button>
+          <a style="margin-right: 15px;" [class.d-none]="token" routerLink="/login" >Login</a>
+          <div [class.d-none]="!token">
+            <a
+              class=" d-flex align-items-center"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+              routerLink="/profile"
+            >
+            
+              <img
+              src="data:image/png;base64,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"
+                class="rounded-circle"
+                width="30" height="30"
+                alt="Black and White Portrait of a Man"
+                loading="lazy"
+              />
+            </a>
+          </div>
         </form>
       </div>
     </nav>

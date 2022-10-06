@@ -20,53 +20,79 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-5 px-md-5">
-                <form>
+                <form #useForm="ngForm" name="myForm" (ngSubmit)="onSubmit()">
                   <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <label  class="text-black">Journey Type :</label>
-                            <input type="radio" style=" margin-left: 30px;" class="radio" name="r">
-                            <label style=" margin-left: 5px;" class="text-black">One Way</label>
-                            <input type="radio" style=" margin-left: 30px;" class="radio" name="r">
-                            <label style=" margin-left: 5px;"  class="text-black">Return</label>
+                          <select style="margin-left:10px;" class="bg-white text-black travel2" 
+                          name="type" [(ngModel)]="bookingModel.type"
+                          #type="ngModel" [class.is-invalid] = "type.invalid && type.touched"
+                          >
+                            <option>Select Journey Type </option>
+                            <option>One Way</option>
+                            <option>Return</option>
+                        </select>
                       </div>
                     </div>
 
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                          <label  class="text-black">From City:</label>
-                         <input type="text" style=" margin-left: 10px;" placeholder="Enter From City Name" class="input bg-white">
+                         <input type="text" style=" margin-left: 10px;"
+                            [(ngModel)]="bookingModel.from"
+                            name="from"
+                            autocomplete="off"
+                          placeholder="Enter From City Name" class="input bg-white">
                          <label style=" margin-left: 10px;" class="text-black">To City :</label>
-                         <input type="text" style=" margin-left: 10px;"  placeholder="Enter To City Name" class="input bg-white"><br>
+                         <input type="text" style=" margin-left: 10px;" 
+                         [(ngModel)]="bookingModel.to"
+                            name="to"
+                            autocomplete="off"
+                           placeholder="Enter To City Name" class="input bg-white"><br>
                       </div>
                     </div>
                   </div>
   
-                  <!-- Email input -->
+                  <!--  input -->
                   <div class="form-outline mb-4">
                     <label class="text-black">Depart</label>
-                        <input type="date" style=" margin-left: 10px;" class="tarikh bg-white text-black">
+                        <input type="date" style=" margin-left: 10px;" 
+                        [(ngModel)]="bookingModel.depart"
+                        name="depart"
+                        class="tarikh bg-white text-black">
                         <label class="text-black" style="margin-left:10px;">Return</label>
-                        <input type="date" style=" margin-left: 10px;" class="tarikh bg-white text-black">
+                        <input type="date" style=" margin-left: 10px;" 
+                        [(ngModel)]="bookingModel.retirn"
+                        name="retirn"
+                         class="tarikh bg-white text-black">
                   </div>
   
                   <!-- Password input -->
                   <div class="form-outline mb-4">
                     <label class="text-black">Adults</label>
-                    <input type="number" style="margin-left:10px;" class="bg-white person" placeholder=" No. of Adults">
+                    <input type="number" style="margin-left:10px;" 
+                    [(ngModel)]="bookingModel.adult"
+                    autocomplete="off"
+                    name="adult"
+                    class="bg-white person" placeholder=" No. of Adults">
                     <label class="text-black" style="margin-left:10px;">Children</label>
-                    <input type="number" style="margin-left:10px;" class="bg-white person" placeholder=" No. of Children"><br>
+                    <input type="number" style="margin-left:10px;"
+                    autocomplete="off"
+                    [(ngModel)]="bookingModel.children"
+                    name="children"
+                     class="bg-white person" placeholder=" No. of Children"><br>
                   </div>
                   
                   <div class="form-outline mb-4">
                     <label class="text-black travel" >Travel Class</label>
-                    <select style="margin-left:10px;" class="bg-white text-black travel2">
+                    <select style="margin-left:10px;" class="bg-white text-black travel2" name="travelClass" [(ngModel)]="bookingModel.travelClass">
                         <option>Select Travel Class</option>
                         <option>First Class/1A</option>
                         <option>AC 2tier/2A</option>
                         <option>AC 3tier/3A</option>
-                        <option>Executive class chair car/Economy Class</option>
+                        <option>Economy Class</option>
                         <option>AC Chair Car</option>
                         <option>Sleeper Class</option>
                         <option>Second Class</option>
@@ -78,8 +104,8 @@
                   
                   <!-- Submit button -->
 
-                  <input type="submit" routerLink="" value="Back to Home" style="margin-right: 10px;" class="btn btn-outline-dark"> 
-                  <input value="Book a Train Ticket" routerLink="" style="margin-left: 10px;" class="btn btn-outline-primary">
+                  <input routerLink="" value="Back to Home"  routerLink=""  style="margin-right: 10px;" class="btn btn-outline-dark"> 
+                  <input type="submit"  value="Book a Train Ticket" style="margin-left: 10px;" class="btn btn-outline-primary">
                 </form>
               </div>
             </div>

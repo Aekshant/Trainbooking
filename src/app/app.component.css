@@ -4600,10 +4600,12 @@
     background-position:50% 50%;
     background-repeat: no-repeat;
     background-size:cover;
+    width: fit-content;
   }
   @media (min-width: 576px) {
     .jumbotron {
       padding: 4rem 2rem;
+      width: fit-content;
     }
   }
   .jumbotron-fluid {

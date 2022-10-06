@@ -1,17 +1,19 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
-import { Login } from './login';
 import { environment } from "../../environments/environment"
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
-  _url = environment.apiURL+ "/user/signin"
+export class ProfileService {
+  _url = environment.apiURL+ "/user"
   constructor( private _http: HttpClient ) { }
   
-  login ( login : Login) {
-    return this._http.post<any>( this._url, login )
+  profileData ( ) {
+    const token = localStorage.getItem("token")
+
+    const headers = { 'Authorization': 'Bearer '+ token }
+    return this._http.get<any>( this._url , { headers })
   }
 }

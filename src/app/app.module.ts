@@ -18,6 +18,8 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ProfileComponent } from './profile/profile.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ToastrModule } from 'ngx-toastr';
     BookingComponent,
     LoginComponent,
     SigninComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

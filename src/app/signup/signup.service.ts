@@ -1,17 +1,17 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
-import { Login } from './login';
+import { User } from "./signup"; 
 import { environment } from "../../environments/environment"
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
-  _url = environment.apiURL+ "/user/signin"
+export class SignUPService {
+  _url = environment.apiURL+ "/user/signup"
   constructor( private _http: HttpClient ) { }
   
-  login ( login : Login) {
-    return this._http.post<any>( this._url, login )
+  signUp ( user : User) {
+    return this._http.post<any>( this._url, user )
   }
 }

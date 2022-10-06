@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { Login } from './login';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from "./auth.service";
 
 @Component({
   selector: 'app-login',
@@ -15,14 +16,15 @@ export class LoginComponent implements OnInit {
   constructor( 
     private _loginService : LoginService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private isLogin :  AuthService
      ) { }
 
   ngOnInit(): void {
   }
    loginModel = new Login("","")
    showError: boolean = false;
-   
+
    onSubmit() {
     console.log(this.loginModel);
     this._loginService.login( this.loginModel )
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
       console.log( data );
       if( data.message == true ) {
         localStorage.setItem("token", data.data.token);
+        this.isLogin.isLoggedIn = true
         this.router.navigate(['/']);
       }
       else{
